@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aliferous Revival Hub | Built in Fire. Sent to Transform.</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CHANGE YOUR COLOURS HERE EASIY -->
+    <style>
+        :root {
+            --color-brand-orange: #E06A22;   /* Main presentation accent[cite: 1] */
+            --color-brand-gold: #A3662A;     /* Secondary title text gold[cite: 1] */
+            --color-slide-dark: hsl(234, 63%, 12%);     /* Dark slide background[cite: 1] */
+            --color-slide-light: #F5F5F7;    /* Light slide background[cite: 1] */
+            --color-nav-bg: hsla(209, 60%, 17%, 0.199);         /* Navigation bar background */
+            --color-footer-bg: #000000;      /* Footer background */
+        }
+    </style>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandOrange: 'var(--color-brand-orange)',
+                        brandGold: 'var(--color-brand-gold)',
+                        slideDark: 'var(--color-slide-dark)',
+                        slideLight: 'var(--color-slide-light)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        oswald: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slideDark text-gray-300 font-sans tracking-wide">
+
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed w-full z-50 border-b border-gray-800/50" style="background-color: var(--color-nav-bg);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center space-x-2">
+                    <span class="font-oswald text-xl sm:text-2xl font-bold tracking-wider text-white">
+                        ALIFEROUS <span class="text-brandOrange">REVIVAL HUB</span>
+                    </span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#home" class="text-white hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Home</a>
+                        <a href="#meaning" class="text-gray-300 hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Meaning</a>
+                        <a href="#who-we-are" class="text-gray-300 hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Who We Are</a>
+                        <a href="#visionary" class="text-gray-300 hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Visionary</a>
+                        <a href="#spheres" class="text-gray-300 hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Spheres</a>
+                        <a href="#pillars" class="text-gray-300 hover:text-brandOrange px-3 py-2 text-sm font-medium transition">Pillars</a>
+                        <a href="#join" class="bg-brandOrange text-white font-bold px-4 py-2 rounded text-sm transition hover:bg-opacity-90">Connect</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button type="button" onclick="toggleMenu()" class="text-gray-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden border-b border-gray-800/50" id="mobile-menu" style="background-color: var(--color-nav-bg);">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" onclick="toggleMenu()" class="block text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#meaning" onclick="toggleMenu()" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Meaning</a>
+                <a href="#who-we-are" onclick="toggleMenu()" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Who We Are</a>
+                <a href="#visionary" onclick="toggleMenu()" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Visionary</a>
+                <a href="#spheres" onclick="toggleMenu()" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Spheres</a>
+                <a href="#pillars" onclick="toggleMenu()" class="block text-gray-300 hover:bg-gray-800 px-3 py-2 rounded-md text-base font-medium">Pillars</a>
+                <a href="#join" onclick="toggleMenu()" class="block bg-brandOrange text-white text-center font-bold px-3 py-2 rounded-md text-base">Connect</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SLIDE 1: HERO / TITLE (DARK BG) -->
+    <header id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-20 bg-slideDark relative">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="flex items-center justify-center space-x-2 text-brandOrange tracking-widest text-xs sm:text-sm font-bold uppercase">
+                <i class="fa-solid fa-fire text-xs"></i>
+                <span>[cite: 1] Built in fire. sent to transform.</span>
+            </div>
+            <h1 class="font-oswald text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-wider text-white">
+                ALIFEROUS REVIVAL HUB
+            </h1>
+            <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light leading-relaxed">
+                A global apostolic movement committed to raising a generation that carries God's presence, walks in divine purpose, and influences structural systems of nations.
+            </p>
+            <div class="pt-4">
+                <p class="italic text-gray-400 text-sm sm:text-base max-w-xl mx-auto font-serif">
+                     “But they that wait upon the Lord shall renew their strength; they shall mount up with wings as eagles...” — Isaiah 40:31
+                </p>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brandOrange to-transparent"></div>
+    </header>
+
+    <!-- SLIDE 2: THE MEANING OF ALIFEROUS (LIGHT BG) -->
+    <section id="meaning" class="py-24 bg-slideLight text-gray-800 px-4 relative">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            
+            <div class="lg:col-span-7 space-y-6">
+                <div class="flex items-center space-x-2">
+                    <div class="w-1 h-6 bg-brandOrange"></div>
+                    <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wider text-black"> THE MEANING OF ALIFEROUS</h2>
+                </div>
+                
+                <p class="text-lg leading-relaxed text-gray-900 font-medium">
+                     Derived from Latin & Greek roots, the word <span class="text-brandOrange font-bold">"ALIFEROUS"</span> literally translates to <span class="underline decoration-brandOrange decoration-2">"To Have Wings."</span>
+                </p>
+                
+                <div class="space-y-4 text-gray-700 text-sm sm:text-base leading-relaxed">
+                    <p>
+                         Wings represent spiritual movement, rapid development, divine dominion, and strength. Just as wings allow an eagle to rise above standard atmospheric limits, Aliferous Revival Hub exists to elevate believers beyond standard societal and human limitations.
+                    </p>
+                    <p>
+                        We equip men and women to soar in their God-given assignments, utilizing supernatural vision and speed to claim territories and rewrite the structures of earth.
+                    </p>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="bg-white p-4 shadow-xl rounded border border-gray-200 max-w-md">
+                    <img src="https://miro.medium.com/1*Npg2JuzJ2QBNpaoQQklFuQ.jpeg" alt="Eagle Soaring Visual" class="w-full object-cover rounded shadow-inner">
+                    <p class="text-center text-xs text-gray-400 mt-2 italic"> Eagle Soaring Visual (Elevation & Vision Theme)</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SLIDE 3: WHO WE ARE (LIGHT BG) -->
+    <section id="who-we-are" class="py-24 bg-slideLight text-gray-800 px-4 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2 mb-12">
+                <div class="w-1 h-6 bg-brandOrange"></div>
+                <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wider text-black"> WHO WE ARE</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                <div class="flex items-start space-x-4">
+                    <div class="text-brandOrange text-2xl pt-1"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                    <div>
+                        <h3 class="font-oswald text-lg font-bold uppercase text-black tracking-wide"> Carriers of His Presence</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mt-1"> A core company built through consecrated prayer, deep intercession, and discipleship under the fire of the Holy Spirit.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-brandOrange text-2xl pt-1"><i class="fa-solid fa-arrows-spin"></i></div>
+                    <div>
+                        <h3 class="font-oswald text-lg font-bold uppercase text-black tracking-wide"> System Transformers</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mt-1"> We are not limited by traditional church walls; we train ambassadors to actively shift corporate, political, and cultural institutions.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-brandOrange text-2xl pt-1"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div>
+                        <h3 class="font-oswald text-lg font-bold uppercase text-black tracking-wide"> Territorial Reformers</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mt-1"> Birthed to restore spiritual life back onto vacant altars, establishing strong apostolic authority in designated geographic cities.</p>
+                    </div>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-brandOrange text-2xl pt-1"><i class="fa-solid fa-eye"></i></div>
+                    <div>
+                        <h3 class="font-oswald text-lg font-bold uppercase text-black tracking-wide"> Generational Visionaries</h3>
+                        <p class="text-gray-700 text-sm sm:text-base mt-1"> Equipping young minds to live out high-level kingdom leadership, combining top-tier intellectual excellence with spiritual power.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: FOUNDER & VISIONARY (LIGHT BG) -->
+    <section id="visionary" class="py-24 bg-slideLight text-gray-800 px-4 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2 mb-12">
+                <div class="w-1 h-6 bg-brandOrange"></div>
+                <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wider text-black"> FOUNDER & VISIONARY</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-4 flex justify-center">
+                    <div class="bg-white p-3 shadow-lg border border-gray-200 rounded max-w-sm">
+                        <img src="https://i.etsystatic.com/60007981/r/il/118e50/6960691951/il_570xn.6960691951_1cto.jpg" alt="Apostle Karami Evans Joshua" class="w-full h-auto object-cover rounded">
+                        <p class="text-center text-xs text-gray-400 mt-2 italic"> Apostle Karami Evans Joshua Presentation Portrait</p>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8 space-y-6">
+                    <div>
+                        <h3 class="font-oswald text-2xl font-bold text-black tracking-wide"> Apostle Karami Evans Joshua</h3>
+                        <span class="text-brandOrange font-bold text-sm tracking-widest block uppercase mt-0.5"> FOUNDER & PRESIDENT</span>
+                    </div>
+
+                    <p class="text-gray-800 leading-relaxed text-sm sm:text-base">
+                        Apostle Karami Evans Joshua is a passionate servant of God carrying an urgent, apostolic mandate to raise active kingdom leaders, restore broken prayer altars, and equip system reformers to influence territories for the glory of God.
+                    </p>
+
+                    <p class="text-gray-700 text-sm leading-relaxed">
+                        Through strategic leadership mentorship, conferences, and deep gatherings, he leads a fast-growing movement dedicated to training next-generation believers to operate in real spiritual authority and marketplace excellence.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start space-x-3 text-sm text-gray-700">
+                            <span class="text-brandOrange font-bold text-base leading-none">+</span>
+                            <span> Equipping territorial intercessors to claim nation boundaries</span>
+                        </div>
+                        <div class="flex items-start space-x-3 text-sm text-gray-700">
+                            <span class="text-brandOrange font-bold text-base leading-none">+</span>
+                            <span> Restoring genuine fire and standard purity back into ministry altars</span>
+                        </div>
+                        <div class="flex items-start space-x-3 text-sm text-gray-700">
+                            <span class="text-brandOrange font-bold text-base leading-none">+</span>
+                            <span> Bridging the gap between spiritual authority and professional dominion</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: STRATEGIC ALIGNMENT SPLIT (DARK BG) -->
+    <section class="py-24 bg-slideDark text-center px-4 relative">
+        <div class="max-w-4xl mx-auto space-y-4">
+            <span class="text-brandOrange text-xs sm:text-sm tracking-widest font-bold uppercase block"> OUR STRATEGIC ALIGNMENT</span>
+            <h2 class="font-oswald text-4xl sm:text-5xl font-extrabold tracking-wider text-white"> The 5 Mountains of Impact</h2>
+            <div class="w-32 h-1 bg-gradient-to-r from-blue-500 via-brandOrange to-red-500 mx-auto my-4"></div>
+            <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto font-light">
+                To build sustainable kingdom influence, Aliferous Revival Hub targets five foundational pillars of society.
+            </p>
+        </div>
+    </section>
+
+    <!-- SLIDE 6 & 7 & 8: THE 5 SPHERES OF INFLUENCE (LIGHT BG) -->
+    <section id="spheres" class="py-24 bg-slideLight text-gray-800 px-4 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2 mb-16">
+                <div class="w-1 h-6 bg-brandOrange"></div>
+                <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wider text-black"> THE 5 SPHERES OF INFLUENCE</h2>
+            </div>
+
+            <!-- Top Grid Summarizing 5 Spheres -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 text-center border-b border-gray-200 pb-16 mb-16">
+                <div class="space-y-2 p-4">
+                    <div class="text-brandOrange text-2xl"><i class="fa-solid fa-building-columns"></i></div>
+                    <h4 class="font-oswald font-bold text-black uppercase tracking-wide"> Government</h4>
+                    <p class="text-xs text-gray-600"> Raising righteous, skilled leaders...</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="text-brandOrange text-2xl"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <h4 class="font-oswald font-bold text-black uppercase tracking-wide"> Schools</h4>
+                    <p class="text-xs text-gray-600"> Igniting revival across campuses...</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="text-brandOrange text-2xl"><i class="fa-solid fa-briefcase"></i></div>
+                    <h4 class="font-oswald font-bold text-black uppercase tracking-wide"> Business</h4>
+                    <p class="text-xs text-gray-600"> Raising ethical entrepreneurs...</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="text-brandOrange text-2xl"><i class="fa-solid fa-users-line"></i></div>
+                    <h4 class="font-oswald font-bold text-black uppercase tracking-wide"> Society</h4>
+                    <p class="text-xs text-gray-600"> Transforming cultural sectors...</p>
+                </div>
+                <div class="space-y-2 p-4">
+                    <div class="text-brandOrange text-2xl"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h4 class="font-oswald font-bold text-black uppercase tracking-wide"> Families</h4>
+                    <p class="text-xs text-gray-600"> Restoring home altars...</p>
+                </div>
+            </div>
+
+            <div class="space-y-12 max-w-5xl mx-auto">
+                <!-- Category A: Government & Education -->
+                <div>
+                    <div class="flex items-center space-x-2 border-b border-gray-200 pb-2 mb-6">
+                        <span class="font-oswald font-bold text-xs uppercase tracking-widest text-brandGold"> STRATEGIC DOMAIN</span>
+                        <h3 class="font-oswald text-lg font-bold text-black uppercase">/ GOVERNMENT & EDUCATION</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="space-y-2">
+                            <h4 class="font-oswald font-bold text-brandOrange flex items-center space-x-2">
+                                <i class="fa-solid fa-scale-balanced text-sm"></i> <span> Righteous Governance</span>
+                            </h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                We believe public leadership is a divine responsibility. Aliferous Revival Hub equips leaders to operate within political, legal, and public service arenas with uncompromised integrity. Our programs advocate for judicial accountability, national restoration, and policy designs grounded in ethical leadership paradigms.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-oswald font-bold text-brandOrange flex items-center space-x-2">
+                                <i class="fa-solid fa-school text-sm"></i> <span> Campus Awakenings</span>
+                            </h4>
+                            <p class="text-sm text-gray-700 leading-relaxed">
+                                Young students represent the primary future of cities. We focus on launching dynamic prayer cells, campus revivals, and peer discipleship labs inside campuses. We guide students to pair supernatural wisdom with academic brilliance, preparing them to guide future learning pipelines.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category B: Marketplace & Kinship -->
+                <div class="pt-6">
+                    <div class="flex items-center space-x-2 border-b border-gray-200 pb-2 mb-6">
+                        <span class="font-oswald font-bold text-xs uppercase tracking-widest text-brandGold"> STRATEGIC DOMAIN</span>
+                        <h3 class="font-oswald text-lg font-bold text-black uppercase">/ MARKETPLACE & KINSHIP</h3>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="space-y-2">
+                            <h4 class="font-oswald font-bold text-brandOrange flex items-center space-x-2">
+                                <i class="fa-solid fa-chart-line text-sm"></i> <span> Business Industry</span>
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-700">
+                                Establishing kingdom entrepreneurs who manage wealth creatively to fund divine assignments, implementing premium standards of marketplace dominion.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-oswald font-bold text-brandOrange flex items-center space-x-2">
+                                <i class="fa-solid fa-masks-theater text-sm"></i> <span> Society & Culture</span>
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-700">
+                                Saturating local communities through direct welfare outreach, media platforms, and spiritual programs aimed at elevating community welfare.
+                            </p>
+                        </div>
+                        <div class="space-y-2">
+                            <h4 class="font-oswald font-bold text-brandOrange flex items-center space-x-2">
+                                <i class="fa-solid fa-heart-pulse text-sm"></i> <span> Family Altars</span>
+                            </h4>
+                            <p class="text-xs sm:text-sm text-gray-700">
+                                Healing broken homes, establishing family altars, and restoring marriage standards to ensure a healthy blueprint for generations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 9: OUR CORE PILLARS (LIGHT BG) -->
+    <section id="pillars" class="py-24 bg-slideLight text-gray-800 px-4 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2 mb-12">
+                <div class="w-1 h-6 bg-brandOrange"></div>
+                <h2 class="font-oswald text-2xl sm:text-3xl font-bold uppercase tracking-wider text-black"> OUR CORE PILLARS</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-200 flex items-start space-x-4">
+                    <div class="text-brandOrange text-xl pt-0.5"><i class="fa-solid fa-fire text-lg"></i></div>
+                    <div>
+                        <h4 class="font-oswald font-bold uppercase tracking-wide text-black text-base"> Spiritual Fire</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1"> We pursue authentic intimacy, continuous prayer, and heavy reliance on the Holy Spirit to transform hearts.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-200 flex items-start space-x-4">
+                    <div class="text-brandOrange text-xl pt-0.5"><i class="fa-solid fa-plus text-lg"></i></div>
+                    <div>
+                        <h4 class="font-oswald font-bold uppercase tracking-wide text-black text-base"> Purity & Holiness</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1"> Operating with clean hands and pure hearts, upholding complete ethical integrity in all business and ministry affairs.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-200 flex items-start space-x-4">
+                    <div class="text-brandOrange text-xl pt-0.5"><i class="fa-solid fa-gem text-lg"></i></div>
+                    <div>
+                        <h4 class="font-oswald font-bold uppercase tracking-wide text-black text-base"> Kingdom Excellence</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1"> Honoring God through disciplined actions, exceptional quality, and high execution values across every secular and sacred sphere.</p>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded shadow-sm border border-gray-200 flex items-start space-x-4">
+                    <div class="text-brandOrange text-xl pt-0.5"><i class="fa-solid fa-hands-holding-child text-lg"></i></div>
+                    <div>
+                        <h4 class="font-oswald font-bold uppercase tracking-wide text-black text-base"> Apostolic Unity</h4>
+                        <p class="text-xs sm:text-sm text-gray-600 mt-1"> Working collaboratively across church denominations to pull down territorial barriers and build collective kingdom momentum.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 10: ALIFEROUS APOCALYPSE DECLARATION (DARK BG) -->
+    <section class="py-24 bg-slideDark text-center px-4 border-t border-gray-800 relative">
+        <div class="max-w-4xl mx-auto space-y-6">
+            <div class="text-brandOrange text-2xl"><i class="fa-solid fa-quote-left"></i></div>
+            <p class="text-lg sm:text-2xl font-light text-white leading-relaxed max-w-3xl mx-auto italic">
+                "We believe that God is raising a generation with wings like eagles — fearless, kingdom-minded, and ready to transform the world through the power of the Holy Spirit. We refuse limitations. We rise to reign!"
+            </p>
+            <div class="pt-4">
+                <span class="text-brandOrange font-bold font-oswald text-xs sm:text-sm tracking-widest uppercase block">
+                    — ALIFEROUS APOCALYPSE DECLARATION
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 11: JOIN THE MOVEMENT / CONTACT (DARK BG) -->
+    <section id="join" class="py-24 bg-slideDark text-white px-4 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <div class="space-y-2">
+                <h2 class="font-oswald text-3xl sm:text-4xl font-bold tracking-wide"> Join the Movement</h2>
+                <p class="text-gray-400 text-sm sm:text-base max-w-xl mx-auto"> Connect with Aliferous Revival Hub to support, partner, or align with our territorial mandates.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto text-left">
+                <!-- Phone -->
+                <div class="flex items-center space-x-4 p-4 rounded bg-black/40 border border-gray-800">
+                    <div class="text-brandOrange text-xl"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-wider text-gray-500 font-bold"> Call/WhatsApp</span>
+                        <span class="font-medium text-sm sm:text-base text-gray-200"> 0700003101</span>
+                    </div>
+                </div>
+                <!-- YouTube -->
+                <div class="flex items-center space-x-4 p-4 rounded bg-black/40 border border-gray-800">
+                    <div class="text-brandOrange text-xl"><i class="fa-brands fa-youtube"></i></div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-wider text-gray-500 font-bold"> YouTube</span>
+                        <span class="font-medium text-sm sm:text-base text-gray-200"> ALIFEROUS REVIVAL HUB</span>
+                    </div>
+                </div>
+                <!-- TikTok -->
+                <div class="flex items-center space-x-4 p-4 rounded bg-black/40 border border-gray-800">
+                    <div class="text-brandOrange text-xl"><i class="fa-brands fa-tiktok"></i></div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-wider text-gray-500 font-bold"> TikTok</span>
+                        <span class="font-medium text-sm sm:text-base text-gray-200"> @aliferousrevivalhub</span>
+                    </div>
+                </div>
+                <!-- Instagram -->
+                <div class="flex items-center space-x-4 p-4 rounded bg-black/40 border border-gray-800">
+                    <div class="text-brandOrange text-xl"><i class="fa-brands fa-instagram"></i></div>
+                    <div>
+                        <span class="block text-xs uppercase tracking-wider text-gray-500 font-bold"> Instagram</span>
+                        <span class="font-medium text-sm sm:text-base text-gray-200"> ALIFEROUS REVIVAL HUB</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 px-4 border-t border-gray-900 text-xs text-gray-600 text-center" style="background-color: var(--color-footer-bg);">
+        <p>&copy; 2026 Aliferous Revival Hub. All rights reserved. Referenced verbatim from "Aliferous Revival Hub - Profile & Guidance.pdf".</p>
+    </footer>
+
+    <!-- INTERACTIVE MENU JAVASCRIPT -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.classList.replace('fa-bars', 'fa-xmark');
+            } else {
+                menu.classList.add('hidden');
+                icon.classList.replace('fa-xmark', 'fa-bars');
+            }
+        }
+    </script>
+</body>
+</html>
